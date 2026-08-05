@@ -10,8 +10,8 @@ int main(){
     while (std::getline(std::cin, command)){
         if(command == "ADD"){
             Contact newContact;
-            newContact.setAll();
-            phoneBook.addContact(newContact);
+            if (newContact.setAll())
+                phoneBook.addContact(newContact);
         } else if (command == "SEARCH") {
             phoneBook.displayContacts();
             std::cout << "Enter index: ";

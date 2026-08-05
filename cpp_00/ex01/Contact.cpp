@@ -92,17 +92,23 @@ void Contact::setDarkestSecret(){
     }
 }
 
-void Contact::setAll(){
-    if (std::cin.eof() == false)
-        setFirstName();
-    if (std::cin.eof() == false)
-        setLastName();
-    if (std::cin.eof() == false)
-        setNickname();
-    if (std::cin.eof() == false)
-        setPhoneNumber();
-    if (std::cin.eof() == false)
-        setDarkestSecret();
+bool Contact::setAll(){
+    setFirstName();
+    if (std::cin.eof())
+        return false;
+    setLastName();
+    if (std::cin.eof())
+        return false;
+    setNickname();
+    if (std::cin.eof())
+        return false;
+    setPhoneNumber();
+    if (std::cin.eof())
+        return false;
+    setDarkestSecret();
+    if (std::cin.eof())
+        return false;
+    return true;
 }
 
 //getters

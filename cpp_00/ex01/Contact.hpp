@@ -18,7 +18,7 @@ class Contact {
     public:
         Contact();
 
-        void setAll();
+        bool setAll();
         void setFirstName();
         void setLastName();
         void setNickname();
