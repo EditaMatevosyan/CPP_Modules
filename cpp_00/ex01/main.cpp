@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string>
 #include "PhoneBook.hpp"
 
 int main(){
@@ -10,19 +12,20 @@ int main(){
             Contact newContact;
             newContact.setAll();
             phoneBook.addContact(newContact);
-        }else if(command == "SEARCH"){
+        } else if (command == "SEARCH") {
             phoneBook.displayContacts();
             std::cout << "Enter index: ";
-            std::string input; 
+            std::string input;
             std::getline(std::cin, input);
-            std::istringstream iss(input);
-            int index = -1;
-            iss >> index;
-            phoneBook.displayContact(index);
-        }else if(command == "EXIT"){
+
+            if (input.length() != 1 || input[0] < '0' || input[0] > '9')
+                std::cout << "Invalid input!" << std::endl;
+            else
+                phoneBook.displayContact(input[0] - '0');
+        } else if(command == "EXIT"){
             break;
         }
         std::cout << "Enter Command(ADD/SEARCH/EXIT): ";
     }
-
+    return 0;
 }

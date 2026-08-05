@@ -1,3 +1,5 @@
+#include <iostream>
+#include <iomanip>
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : nextIndex(0), count(0){
@@ -12,8 +14,8 @@ std::string PhoneBook::truncate(const std::string& s) const{
  
 void PhoneBook::addContact(const Contact& newContact){
     contact[nextIndex] = newContact;
-    nextIndex = (nextIndex + 1) % 8;
-    if(count < 8){
+    nextIndex = (nextIndex + 1) % maxContacts;
+    if(count < maxContacts){
         count++;
     }
 }
@@ -31,15 +33,13 @@ void PhoneBook::displayContact(int index) const {
 }
 
 void PhoneBook::displayContacts() const{
-    int validCount = (count < 8) ? count : 8;
-
-    std::cout << std::right 
+    std::cout << std::right
         << std::setw(10) << "Index" << "|" 
-        << std::setw(10) << "Fisrt Name" << "|"
+        << std::setw(10) << "First Name" << "|"
         << std::setw(10) << "Last Name" << "|"
         << std::setw(10) << "Nickname" << "|"
         << std::endl;
-    for(int i = 0; i < validCount; i++){
+    for(int i = 0; i < count; i++){
         std::cout << std::right
                 << std::setw(10) << i << "|" 
                 << std::setw(10) << truncate(contact[i].getFirstName()) << "|"

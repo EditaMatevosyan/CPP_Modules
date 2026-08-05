@@ -8,9 +8,9 @@ int main(int argc, char* argv[]){
         return 0;
     }
 
-    for (int i = 1; argv[i]; i++) {
+    for (int i = 1; i < argc; i++) {
         for (int j = 0; argv[i][j]; j++) {
-            char c = toupper(argv[i][j]);
+            char c = static_cast<char>(std::toupper(static_cast<unsigned char>(argv[i][j])));
             std::cout << c;
         }
     }
