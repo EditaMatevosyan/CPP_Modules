@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
         std::cerr << "Error opening input file!" << std::endl;
         return 1;
     }
-    std::ofstream newFile(fileName + ".replace");
+    std::ofstream newFile((fileName + ".replace").c_str());
     if(!newFile){
         std::cerr << "Error opening output file!" << std::endl;
         return 1;
@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
     while(std::getline(inFile, line)){
         newFile << replaceAll(line, argv[2], argv[3]);
         if (!inFile.eof())
-            std::cout << std::endl;
+            newFile << std::endl;
     }
     inFile.close();
     newFile.close();
