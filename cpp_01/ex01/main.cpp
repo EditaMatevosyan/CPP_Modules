@@ -6,10 +6,13 @@ int main() {
 	std::cout << "Name for horde: ";
 	std::cin >> name;
 
-	int	N;
+	int	N = 0;
 
 	std::cout << "Num of zombies: ";
-	std::cin >> N;
+	if (!(std::cin >> N) || N <= 0) {
+		std::cerr << "Invalid number of zombies." << std::endl;
+		return 1;
+	}
 
 	Zombie*	horde = zombieHorde(N, name);
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
 std::string replaceAll(std::string line, std::string s1, std::string s2){
     if (s1.empty())
