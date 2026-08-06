@@ -6,12 +6,12 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = \
 	main.cpp \
 	Zombie.cpp \
-	zombieHorde.cpp \
+	zombieHorde.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 
 HEADERS = \
-	Zombie.hpp \
+	Zombie.hpp 
 
 RM = rm -f
 

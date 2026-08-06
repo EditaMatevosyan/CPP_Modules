@@ -7,12 +7,12 @@ SRCS = \
 	main.cpp \
 	Zombie.cpp \
 	newZombie.cpp \
-	randomChump.cpp \
+	randomChump.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 
 HEADERS = \
-	Zombie.hpp \
+	Zombie.hpp 
 
 RM = rm -f
 
