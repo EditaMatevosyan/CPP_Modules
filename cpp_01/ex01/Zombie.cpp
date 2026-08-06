@@ -2,8 +2,8 @@
 
 Zombie::Zombie() : name("Unnamed Zombie") {}
 
-void Zombie::setName(std::string name){
-    this->name = name;
+void Zombie::setName(const std::string& new_name){
+    name = new_name;
 }
 
 void Zombie::announce() {
