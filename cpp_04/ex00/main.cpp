@@ -14,7 +14,7 @@ int main()
 
         std::cout << j->getType() << " " << std::endl;
         std::cout << i->getType() << " " << std::endl;
-        i->makeSound(); // will output the cat sound!
+        i->makeSound();
         j->makeSound();
         meta->makeSound();
 
@@ -31,7 +31,7 @@ int main()
         std::cout << wa->getType() << " " << std::endl;
         std::cout << wc->getType() << " " << std::endl;
         wa->makeSound();
-        wc->makeSound(); // should wrongly output WrongAnimal sound, NOT WrongCat's
+        wc->makeSound();
 
         delete wa;
         delete wc;
@@ -43,9 +43,9 @@ int main()
         Cat realCat;
         WrongCat realWrongCat;
 
-        realDog.makeSound();       // barf barf
-        realCat.makeSound();       // myauuu
-        realWrongCat.makeSound();  // phrrrrr (called directly, so it's fine here)
+        realDog.makeSound();
+        realCat.makeSound();
+        realWrongCat.makeSound();
     }
 
     std::cout << std::endl << "=== Copy constructor test ===" << std::endl;
@@ -66,7 +66,6 @@ int main()
         cat2 = cat1;
         std::cout << "cat2 type after assignment: " << cat2.getType() << std::endl;
 
-        // self-assignment guard test (indirection avoids -Wself-assign-overloaded)
         Cat* catPtr = &cat2;
         cat2 = *catPtr;
         std::cout << "cat2 type after self-assignment: " << cat2.getType() << std::endl;
