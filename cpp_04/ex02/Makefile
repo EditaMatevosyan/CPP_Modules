@@ -38,9 +38,4 @@ fclean: clean
 
 re: fclean all
 
-# Demo target: compiles main.cpp with the illegal Animal instantiations enabled.
-# This is MEANT to fail, to show that Animal is really abstract.
-abstract:
-	$(CC) $(CFLAGS) -D TEST_ABSTRACT -c main.cpp -o /dev/null
-
 .PHONY: all clean fclean re abstract

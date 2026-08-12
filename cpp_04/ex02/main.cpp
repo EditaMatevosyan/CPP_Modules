@@ -4,15 +4,6 @@
 
 int main()
 {
-    std::cout << "=== Animal is now abstract ===" << std::endl;
-    {
-        // Animal a;                  // error: cannot declare variable of abstract type
-        // Animal* bad = new Animal(); // error: cannot allocate an object of abstract type
-
-        std::cout << "(Animal a; and new Animal(); are commented out on purpose --"
-                   << " uncomment to prove they fail to compile)" << std::endl;
-    }
-
     std::cout << std::endl << "=== Everything else still works through base pointers ===" << std::endl;
     {
         const Animal* j = new Dog();
