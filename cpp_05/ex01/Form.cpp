@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Form::Form() : _name("Unknown"),  _gradeToSign(150), _gradeToExecute(150){
+Form::Form() : _name("Unknown"), _isSigned(false),  _gradeToSign(150), _gradeToExecute(150){
     std::cout << "Default constructor of Form called" << std::endl;
 }
 
